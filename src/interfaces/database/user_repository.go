@@ -25,7 +25,6 @@ func (repo *UserRepository) Store(u domain.User) (id int, err error) {
 	return
 }
 
-// identifier 識別子 アイデンティファイア
 func (repo *UserRepository) FindById(identifier int) (domain.User, error) {
 	row, err := repo.Query(
 		"SELECT id, first_name, last_name FROM users WHERE id = ?", identifier,
